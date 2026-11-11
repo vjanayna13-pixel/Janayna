@@ -1,0 +1,522 @@
+/* ========================================
+   JANAYNA ARSENIO — Moda Autoral
+   ======================================== */
+
+   :root {
+    --preto: #111111;
+    --cinza-escuro: #2a2a2a;
+    --cinza: #666666;
+    --bege: #f5f0eb;
+    --creme: #faf7f2;
+    --branco: #ffffff;
+    --dourado: #c9a87c;
+    --fonte-titulo: 'Playfair Display', Georgia, serif;
+    --fonte-corpo: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: var(--fonte-corpo);
+    color: var(--preto);
+    background: var(--branco);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+  }
+  
+  /* ---------- Faixa superior ---------- */
+  .faixa {
+    background: var(--preto);
+    color: var(--branco);
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  
+  /* ---------- Header ---------- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 5%;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .logo {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+  }
+  
+  .logo span {
+    display: block;
+    font-family: var(--fonte-corpo);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--cinza);
+    margin-top: 2px;
+    font-weight: 400;
+  }
+  
+  nav {
+    display: flex;
+    gap: 32px;
+  }
+  
+  nav a {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--preto);
+    transition: width 0.3s ease;
+  }
+  
+  nav a:hover::after {
+    width: 100%;
+  }
+  
+  /* ---------- Hero ---------- */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 90vh;
+    align-items: center;
+  }
+  
+  .hero-texto {
+    padding: 80px 8% 80px 10%;
+  }
+  
+  .subtitulo {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cinza);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  
+  .hero-texto h1 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 28px;
+  }
+  
+  .hero-texto h1 em {
+    font-style: italic;
+    color: var(--cinza-escuro);
+  }
+  
+  .hero-texto p {
+    font-size: 1.05rem;
+    color: var(--cinza);
+    max-width: 420px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+  
+  .botao {
+    display: inline-block;
+    background: var(--preto);
+    color: var(--branco);
+    padding: 16px 32px;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .botao:hover {
+    background: var(--cinza-escuro);
+    transform: translateY(-2px);
+  }
+  
+  .botao.claro {
+    background: transparent;
+    color: var(--branco);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+  
+  .botao.claro:hover {
+    background: var(--branco);
+    color: var(--preto);
+  }
+  
+  .hero-imagem {
+    height: 100%;
+    min-height: 90vh;
+    overflow: hidden;
+  }
+  
+  .hero-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* ---------- Frase ---------- */
+  .frase {
+    text-align: center;
+    padding: 100px 20px;
+    background: var(--bege);
+  }
+  
+  .frase h2 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 400;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    line-height: 1.3;
+  }
+  
+  .frase p {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--cinza);
+  }
+  
+  /* ---------- Catálogo ---------- */
+  .catalogo {
+    padding: 100px 5%;
+  }
+  
+  .titulo {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .titulo h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 2.6rem;
+    font-weight: 400;
+    margin: 12px 0 16px;
+  }
+  
+  .titulo p {
+    color: var(--cinza);
+    font-size: 1rem;
+  }
+  
+  .produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .produtos article img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    margin-bottom: 18px;
+    transition: transform 0.5s ease;
+  }
+  
+  .produtos article:hover img {
+    transform: scale(1.03);
+  }
+  
+  .produtos article h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 4px;
+  }
+  
+  .produtos article p {
+    font-size: 0.85rem;
+    color: var(--cinza);
+    margin-bottom: 8px;
+  }
+  
+  .produtos article strong {
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  
+  /* ---------- Ateliê ---------- */
+  .atelier {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 80vh;
+    background: var(--creme);
+  }
+  
+  .atelier-imagem {
+    overflow: hidden;
+  }
+  
+  .atelier-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 500px;
+  }
+  
+  .atelier-texto {
+    padding: 80px 10% 80px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .atelier-texto h2 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 20px 0 28px;
+  }
+  
+  .atelier-texto h2 em {
+    font-style: italic;
+  }
+  
+  .atelier-texto .destaque {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: var(--preto);
+  }
+  
+  .atelier-texto p {
+    color: var(--cinza-escuro);
+    margin-bottom: 16px;
+    max-width: 460px;
+    line-height: 1.7;
+  }
+  
+  /* ---------- Processo ---------- */
+  .processo {
+    padding: 100px 5%;
+    text-align: center;
+    background: var(--branco);
+  }
+  
+  .processo h2 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 400;
+    margin: 16px 0 60px;
+  }
+  
+  .etapas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .etapas div {
+    padding: 0 10px;
+  }
+  
+  .etapas span {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: var(--dourado);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  
+  .etapas h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  
+  .etapas p {
+    font-size: 0.9rem;
+    color: var(--cinza);
+    line-height: 1.5;
+  }
+  
+  /* ---------- Contato ---------- */
+  .contato {
+    background: var(--preto);
+    color: var(--branco);
+    text-align: center;
+    padding: 120px 20px;
+  }
+  
+  .contato .subtitulo {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .contato h2 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    margin: 20px 0 24px;
+    line-height: 1.2;
+  }
+  
+  .contato h2 em {
+    font-style: italic;
+  }
+  
+  .contato p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+  }
+  
+  .contato small {
+    display: block;
+    margin-top: 24px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--preto);
+    color: var(--branco);
+    text-align: center;
+    padding: 50px 20px 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  
+  footer .logo {
+    color: var(--branco);
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+  
+  footer .logo span {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  footer p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  
+  footer span {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  
+  /* ---------- Responsivo ---------- */
+  @media (max-width: 980px) {
+    .hero,
+    .atelier {
+      grid-template-columns: 1fr;
+    }
+  
+    .hero-imagem {
+      min-height: 60vh;
+      order: -1;
+    }
+  
+    .hero-texto {
+      padding: 60px 6%;
+      text-align: center;
+    }
+  
+    .hero-texto p {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .atelier-texto {
+      padding: 60px 6%;
+    }
+  
+    .etapas {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 20px;
+    }
+  
+    nav {
+      gap: 20px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    header {
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px 5%;
+    }
+  
+    nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px 24px;
+    }
+  
+    .produtos {
+      grid-template-columns: 1fr 1fr;
+      gap: 30px 16px;
+    }
+  
+    .etapas {
+      grid-template-columns: 1fr;
+    }
+  
+    .faixa {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+    }
+  }
+  
+  @media (max-width: 420px) {
+    .produtos {
+      grid-template-columns: 1fr;
+    }
+  }
